@@ -14,3 +14,29 @@ function addBookToLibrary() {
   let read = prompt("Have you read the book?")
   myLibrary.push(new Book(title, author, pages, read));
 };
+
+myLibrary[0] = new Book("The Hobbit", "J.R.R. Tolkien", 272, "yes");
+myLibrary[1] = new Book("Eragon", "Christopher Paolini", 736, "yes");
+
+myLibrary.forEach(function(book) {
+  const div = document.createElement("div");
+  div.classList.add("book");
+
+  const paraTitle = document.createElement("p");
+  paraTitle.textContent = `Title: ${book.title}`;
+  div.appendChild(paraTitle);
+
+  const paraAuthor = document.createElement("p")
+  paraAuthor.textContent = `Author: ${book.author}`;
+  div.appendChild(paraAuthor);
+
+  const paraPages = document.createElement("p");
+  paraPages.textContent = `Pages: ${book.pages}`;
+  div.appendChild(paraPages);
+
+  const paraRead = document.createElement("p");
+  paraRead.textContent = `Read: ${book.read}`;
+  div.appendChild(paraRead);
+
+  document.body.appendChild(div);
+});
