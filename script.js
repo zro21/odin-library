@@ -19,6 +19,12 @@ myLibrary[0] = new Book("The Hobbit", "J.R.R. Tolkien", 272, "yes");
 myLibrary[1] = new Book("Eragon", "Christopher Paolini", 736, "yes");
 
 function LoopArray() {
+  const matches = document.querySelectorAll(".book");
+  if (matches !== null) {
+    matches.forEach(function(match) {
+      match.remove();
+    });
+  };
   myLibrary.forEach(function(book) {
     const divLibrary = document.querySelector(".library");
     const divBook = document.createElement("div");
